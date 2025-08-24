@@ -1,0 +1,15 @@
+def on_button_pressed_a():
+    motobit.enable(MotorPower.ON)
+    motobit.set_motor_speed(Motor.LEFT, MotorDirection.FORWARD, 100)
+    motobit.set_motor_speed(Motor.RIGHT, MotorDirection.FORWARD, 100)
+    basic.pause(1000)
+    motobit.set_motor_speed(Motor.LEFT, MotorDirection.REVERSE, 100)
+    motobit.set_motor_speed(Motor.RIGHT, MotorDirection.FORWARD, 100)
+    basic.pause(200)
+    motobit.set_motor_speed(Motor.LEFT, MotorDirection.FORWARD, 100)
+    motobit.set_motor_speed(Motor.RIGHT, MotorDirection.FORWARD, 100)
+    basic.pause(1000)
+    motobit.enable(MotorPower.OFF)
+input.on_button_pressed(Button.A, on_button_pressed_a)
+
+motobit.invert(Motor.LEFT, False)
